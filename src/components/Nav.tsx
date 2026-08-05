@@ -2,14 +2,16 @@
 
 import { useEffect, useState } from "react";
 
-const links = [
-  { href: "#profile", label: "Profile" },
-  { href: "#arsenal", label: "Arsenal" },
-  { href: "#work", label: "Work" },
-  { href: "#projects", label: "Projects" },
-  { href: "#method", label: "Method" },
-  { href: "#credentials", label: "Credentials" },
-  { href: "#contact", label: "Contact" },
+import { accents, type AccentKey } from "@/lib/accents";
+
+const links: { href: string; label: string; accent: AccentKey }[] = [
+  { href: "#profile", label: "Profile", accent: "azure" },
+  { href: "#arsenal", label: "Arsenal", accent: "ember" },
+  { href: "#work", label: "Work", accent: "jade" },
+  { href: "#projects", label: "Projects", accent: "violet" },
+  { href: "#method", label: "Method", accent: "amber" },
+  { href: "#credentials", label: "Credentials", accent: "signal" },
+  { href: "#contact", label: "Contact", accent: "plasma" },
 ];
 
 export default function Nav() {
@@ -58,28 +60,37 @@ export default function Nav() {
         >
           <span
             aria-hidden="true"
-            className="text-lg leading-none text-bronze transition-transform duration-300 group-hover:-translate-y-0.5"
+            className="flex h-7 w-7 items-center justify-center rounded-sm border border-bronze/40 bg-gradient-to-br from-bronze/25 to-ember/10 text-base leading-none text-bronze transition-transform duration-300 group-hover:-translate-y-0.5"
           >
-            &#9816;
+            &#9822;
           </span>
           <span className="text-bone/90">S. Lemein</span>
         </a>
 
         <ul className="hidden items-center gap-7 md:flex">
-          {links.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className={`font-mono text-xs uppercase tracking-[0.16em] transition-colors ${
-                  active === link.href
-                    ? "text-bronze"
-                    : "text-muted hover:text-bone"
-                }`}
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
+          {links.map((link) => {
+            const tone = accents[link.accent];
+            const isActive = active === link.href;
+
+            return (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className={`relative block py-1 font-mono text-xs uppercase tracking-[0.16em] transition-colors ${
+                    isActive ? tone.text : "text-muted hover:text-bone"
+                  }`}
+                >
+                  {link.label}
+                  <span
+                    aria-hidden="true"
+                    className={`absolute -bottom-0.5 left-0 h-px transition-all duration-300 ${
+                      isActive ? `w-full ${tone.bgSolid}` : "w-0 bg-transparent"
+                    }`}
+                  />
+                </a>
+              </li>
+            );
+          })}
         </ul>
 
         <button

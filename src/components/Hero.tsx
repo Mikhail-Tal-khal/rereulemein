@@ -1,4 +1,11 @@
+import { ArrowUpRight, Mail, Pin } from "@/components/Icons";
 import { metrics, profile } from "@/data/profile";
+import { accentAt, accents } from "@/lib/accents";
+
+/** The eight back-rank pieces, one per accent — a coloured rule with a reason. */
+const RANK = ["♜", "♞", "♝", "♛", "♚", "♝", "♞", "♜"];
+
+const FOCUS_ACCENTS = [accents.ember, accents.violet, accents.crimson];
 
 export default function Hero() {
   return (
@@ -8,35 +15,40 @@ export default function Hero() {
     >
       <div
         aria-hidden="true"
-        className="board-field pointer-events-none absolute inset-0 opacity-70"
+        className="aurora pointer-events-none absolute inset-0 animate-drift"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-40 left-1/2 h-[36rem] w-[36rem] -translate-x-1/2 rounded-full bg-bronze/[0.07] blur-3xl"
+        className="board-field pointer-events-none absolute inset-0 opacity-70"
       />
 
       <div className="relative mx-auto w-full max-w-6xl">
-        <p className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.28em] text-bronze/90 animate-fade-in">
+        <p className="flex items-center gap-2.5 font-mono text-xs uppercase tracking-[0.28em] text-bronze/90 animate-fade-in">
           <span className="relative flex h-1.5 w-1.5">
-            <span className="absolute inline-flex h-full w-full rounded-full bg-signal animate-pulse-slow" />
+            <span className="absolute inline-flex h-full w-full rounded-full bg-jade animate-ping-soft" />
+            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-jade" />
           </span>
+          <Pin className="h-3.5 w-3.5 text-bronze/70" />
           {profile.location}
         </p>
 
-        <h1 className="mt-7 max-w-4xl text-5xl font-medium leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl animate-fade-up">
+        <h1 className="text-gradient mt-7 max-w-4xl text-5xl font-medium leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl animate-fade-up">
           {profile.name}
         </h1>
 
-        <p className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-lg text-bone/90 sm:text-xl">
-          <span>{profile.role}</span>
-          {profile.focus.map((item) => (
-            <span key={item} className="flex items-center gap-3">
-              <span className="text-bronze/50" aria-hidden="true">
-                /
+        <p className="mt-6 flex flex-wrap items-center gap-2 text-lg sm:text-xl">
+          <span className="text-bone/90">{profile.role}</span>
+          {profile.focus.map((item, index) => {
+            const tone = FOCUS_ACCENTS[index % FOCUS_ACCENTS.length];
+            return (
+              <span
+                key={item}
+                className={`rounded-sm border px-2.5 py-0.5 text-[13px] font-medium ${tone.border} ${tone.bg} ${tone.text}`}
+              >
+                {item}
               </span>
-              <span className="text-muted">{item}</span>
-            </span>
-          ))}
+            );
+          })}
         </p>
 
         <p className="mt-10 max-w-2xl font-serif text-2xl italic leading-snug text-bone/95 sm:text-3xl">
@@ -50,35 +62,64 @@ export default function Hero() {
         <div className="mt-10 flex flex-wrap items-center gap-3">
           <a
             href="#work"
-            className="rounded-sm border border-bronze/60 bg-bronze/10 px-5 py-2.5 font-mono text-xs uppercase tracking-[0.16em] text-bronze transition-colors hover:bg-bronze/20"
+            className="group flex items-center gap-2 rounded-sm border border-bronze/60 bg-gradient-to-r from-bronze/20 to-amber/10 px-5 py-2.5 font-mono text-xs uppercase tracking-[0.16em] text-bronze transition-colors hover:from-bronze/30 hover:to-amber/20"
           >
             See the work
+            <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
           <a
             href={profile.github}
             target="_blank"
             rel="noreferrer noopener"
-            className="rounded-sm border border-line px-5 py-2.5 font-mono text-xs uppercase tracking-[0.16em] text-muted transition-colors hover:border-bone/40 hover:text-bone"
+            className="group flex items-center gap-2 rounded-sm border border-line px-5 py-2.5 font-mono text-xs uppercase tracking-[0.16em] text-muted transition-colors hover:border-violet/50 hover:text-violet"
           >
-            GitHub ↗
+            GitHub
+            <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
           <a
             href={`mailto:${profile.email}`}
-            className="rounded-sm border border-line px-5 py-2.5 font-mono text-xs uppercase tracking-[0.16em] text-muted transition-colors hover:border-bone/40 hover:text-bone"
+            className="flex items-center gap-2 rounded-sm border border-line px-5 py-2.5 font-mono text-xs uppercase tracking-[0.16em] text-muted transition-colors hover:border-signal/50 hover:text-signal"
           >
+            <Mail className="h-3.5 w-3.5" />
             Get in touch
           </a>
         </div>
 
-        <dl className="mt-20 grid grid-cols-1 gap-px overflow-hidden rounded-sm border border-line/80 bg-line/60 sm:grid-cols-2 lg:grid-cols-4">
-          {metrics.map((metric) => (
-            <div key={metric.value} className="bg-ink/90 px-6 py-7">
-              <dt className="font-mono text-3xl text-bronze">{metric.value}</dt>
-              <dd className="mt-2 text-sm leading-relaxed text-muted">
-                {metric.label}
-              </dd>
-            </div>
+        <div
+          aria-hidden="true"
+          className="mt-16 flex items-center justify-between gap-2 border-y border-line/60 py-3"
+        >
+          {RANK.map((piece, index) => (
+            <span
+              key={`${piece}-${index}`}
+              className={`select-none text-xl leading-none opacity-50 transition-opacity duration-300 hover:opacity-100 sm:text-2xl ${accentAt(index).text}`}
+            >
+              {piece}
+            </span>
           ))}
+        </div>
+
+        <dl className="mt-10 grid grid-cols-1 gap-px overflow-hidden rounded-sm border border-line/80 bg-line/60 sm:grid-cols-2 lg:grid-cols-4">
+          {metrics.map((metric, index) => {
+            const tone = accentAt(index);
+            return (
+              <div
+                key={metric.value}
+                className="group relative overflow-hidden bg-ink/90 px-6 py-7 transition-colors duration-300 hover:bg-surface"
+              >
+                <span
+                  aria-hidden="true"
+                  className={`absolute inset-x-0 top-0 h-px bg-gradient-to-r to-transparent ${tone.from}`}
+                />
+                <dt className={`font-mono text-3xl ${tone.text}`}>
+                  {metric.value}
+                </dt>
+                <dd className="mt-2 text-sm leading-relaxed text-muted">
+                  {metric.label}
+                </dd>
+              </div>
+            );
+          })}
         </dl>
       </div>
     </section>

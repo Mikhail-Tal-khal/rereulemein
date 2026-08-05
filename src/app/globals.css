@@ -1,14 +1,29 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #07080a;
-  --color-surface: #0d0f13;
-  --color-raised: #12151b;
+  /* Ground */
+  --color-ink: #06070a;
+  --color-surface: #0d0f14;
+  --color-raised: #12151c;
   --color-line: #232833;
   --color-bone: #eae8e3;
   --color-muted: #8d949f;
-  --color-bronze: #c8a45c;
+
+  /* Accents — one hue per domain, used consistently across the site */
+  --color-bronze: #d4a75a;
   --color-signal: #5eead4;
+  --color-ember: #ff7a45;
+  --color-crimson: #fb5f7a;
+  --color-violet: #a78bfa;
+  --color-azure: #5aa9ff;
+  --color-jade: #4ade80;
+  --color-amber: #fbbf24;
+  --color-plasma: #e879f9;
+
+  /* Board */
+  --color-board-light: #e9dbb8;
+  --color-board-dark: #31685c;
+  --color-board-edge: #1a1d24;
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
@@ -17,6 +32,11 @@
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
   --animate-fade-in: fade-in 0.5s ease both;
   --animate-pulse-slow: pulse-slow 4s ease-in-out infinite;
+  --animate-drift: drift 22s ease-in-out infinite alternate;
+  --animate-sweep: sweep 3.4s linear infinite;
+  --animate-pop: pop 0.36s cubic-bezier(0.2, 1.4, 0.4, 1) both;
+  --animate-shimmer: shimmer 7s linear infinite;
+  --animate-ping-soft: ping-soft 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 @keyframes fade-up {
@@ -49,6 +69,56 @@
   }
 }
 
+@keyframes drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(4%, -3%, 0) scale(1.12);
+  }
+}
+
+@keyframes sweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.72);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes ping-soft {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  70%,
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
@@ -64,10 +134,10 @@ body {
 /* Faint chequered field — the board is never far away. */
 .board-field {
   background-image:
-    linear-gradient(45deg, rgba(200, 164, 92, 0.045) 25%, transparent 25%),
-    linear-gradient(-45deg, rgba(200, 164, 92, 0.045) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, rgba(200, 164, 92, 0.045) 75%),
-    linear-gradient(-45deg, transparent 75%, rgba(200, 164, 92, 0.045) 75%);
+    linear-gradient(45deg, rgba(212, 167, 90, 0.05) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(94, 234, 212, 0.035) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(94, 234, 212, 0.035) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(212, 167, 90, 0.05) 75%);
   background-size: 88px 88px;
   background-position:
     0 0,
@@ -83,8 +153,68 @@ body {
   background-size: 64px 64px;
 }
 
+/* Slow colour wash behind the hero and contact blocks. */
+.aurora {
+  background-image:
+    radial-gradient(38rem 22rem at 12% 8%, rgba(212, 167, 90, 0.16), transparent 65%),
+    radial-gradient(32rem 20rem at 82% 12%, rgba(94, 234, 212, 0.13), transparent 65%),
+    radial-gradient(34rem 24rem at 68% 78%, rgba(167, 139, 250, 0.13), transparent 65%),
+    radial-gradient(28rem 18rem at 22% 82%, rgba(255, 122, 69, 0.1), transparent 65%);
+  filter: blur(6px);
+}
+
+/* Board: squares and pieces size themselves off the board's own width. */
+.board-shell {
+  container-type: inline-size;
+}
+
+.piece-glyph {
+  /* Pin a symbol font: the sans stack's chess glyphs vary badly by platform. */
+  font-family: "Segoe UI Symbol", "Apple Symbols", "Noto Sans Symbols 2",
+    "DejaVu Sans", sans-serif;
+  font-size: 9.4cqw;
+  line-height: 1;
+  user-select: none;
+}
+
+.piece-w {
+  color: #f8f3e8;
+  -webkit-text-stroke: 0.9px rgba(18, 21, 26, 0.9);
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+.piece-b {
+  color: #15181e;
+  -webkit-text-stroke: 0.7px rgba(233, 219, 184, 0.3);
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.text-gradient {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-bone) 0%,
+    var(--color-bronze) 38%,
+    var(--color-amber) 52%,
+    var(--color-bone) 78%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hairline {
+  background-image: linear-gradient(
+    to right,
+    var(--color-bronze),
+    var(--color-signal) 28%,
+    var(--color-violet) 56%,
+    transparent
+  );
+}
+
 ::selection {
-  background: rgba(200, 164, 92, 0.28);
+  background: rgba(212, 167, 90, 0.3);
 }
 
 @media (prefers-reduced-motion: reduce) {

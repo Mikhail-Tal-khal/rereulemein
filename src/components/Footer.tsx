@@ -7,8 +7,11 @@ export default function Footer() {
         <p className="font-mono text-[11px] tracking-wide text-muted/70">
           © {new Date().getFullYear()} {profile.name} · {profile.location}
         </p>
-        <p className="font-mono text-[11px] tracking-wide text-muted/50">
-          Built with Next.js · &#9816; g1 to f3
+        <p className="flex items-center gap-2 font-mono text-[11px] tracking-wide text-muted/50">
+          Built with Next.js
+          <span className="text-muted/30">·</span>
+          <span className="text-bronze/70">&#9822;</span>
+          <span>g1 to f3</span>
         </p>
       </div>
     </footer>
