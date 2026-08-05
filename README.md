@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio — Solomon Rereu Lemein
 
-## Getting Started
-
-First, run the development server:
+Personal portfolio site. Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS v4.
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Path | What it is |
+| --- | --- |
+| `src/data/profile.ts` | **All site copy lives here.** Edit this file, not the components. |
+| `src/app/layout.tsx` | Fonts (Geist, Geist Mono, EB Garamond), page metadata. |
+| `src/app/globals.css` | Design tokens (`@theme`), animations, the chequered board background. |
+| `src/components/` | One component per section, plus three interactive pieces. |
 
-## Learn More
+Sections in order: Hero → Profile → Arsenal (skills) → Work → Projects → Method → Credentials → Contact.
 
-To learn more about Next.js, take a look at the following resources:
+## Interactive pieces
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **`Meditations.tsx`** — rotating passages from Marcus Aurelius (George Long translation, 1862, public domain). Auto-advances every 9s, pauses on hover/focus.
+- **`KnightBoard.tsx`** — a live chessboard. The knight starts on g1; legal moves are marked, click to play one. Visited squares stay dotted.
+- **`EscapeLocks.tsx`** — three cards that open one at a time; opening all three changes the status line.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Privacy
 
-## Deploy on Vercel
+The CV this was built from contained personal particulars that are **deliberately not on the site**:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- national ID number
+- date of birth
+- telephone number
+- nationality and security-vetting particulars
+- home address
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Only the professional contact points are published: email, GitHub, and city. The contact section says explicitly that particulars, referees and verification documents are available on request rather than on a public page. If you add analytics or a contact form later, keep it that way — a form that emails you is fine; a form that stores identity data on a third-party host is not.
+
+## Deploying
+
+Static output, no server dependencies:
+
+```bash
+npm run build
+```
+
+Deploys to Vercel, Netlify or Cloudflare Pages as-is. Set a custom domain and the `metadataBase` in `layout.tsx` if you want richer link previews.
