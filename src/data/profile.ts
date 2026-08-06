@@ -1,3 +1,6 @@
+import type { IconName } from "@/components/Icons";
+import type { AccentKey } from "@/lib/accents";
+
 /**
  * Single source of truth for every word on the site.
  *
@@ -62,6 +65,11 @@ export type SkillGroup = {
   kicker: string;
   items: readonly string[];
   primary?: boolean;
+  icon: IconName;
+  accent: AccentKey;
+  /** The piece this group behaves like, used as a watermark on the card. */
+  piece: string;
+  pieceName: string;
 };
 
 export const skills: readonly SkillGroup[] = [
@@ -69,6 +77,10 @@ export const skills: readonly SkillGroup[] = [
     group: "Offensive Security & Red Team",
     kicker: "01",
     primary: true,
+    icon: "crosshair",
+    accent: "ember",
+    piece: "♛",
+    pieceName: "Queen",
     items: [
       "Penetration testing",
       "Malware development and analysis for authorised simulation",
@@ -82,6 +94,10 @@ export const skills: readonly SkillGroup[] = [
     group: "Intelligence & Investigation",
     kicker: "02",
     primary: true,
+    icon: "lensGraph",
+    accent: "violet",
+    piece: "♝",
+    pieceName: "Bishop",
     items: [
       "OSINT collection and analysis",
       "Digital forensics",
@@ -95,6 +111,10 @@ export const skills: readonly SkillGroup[] = [
     group: "Fraud Detection & Analysis",
     kicker: "03",
     primary: true,
+    icon: "anomaly",
+    accent: "crimson",
+    piece: "♞",
+    pieceName: "Knight",
     items: [
       "Mobile money transaction flow security",
       "Anomaly and outlier detection",
@@ -107,6 +127,10 @@ export const skills: readonly SkillGroup[] = [
   {
     group: "Languages",
     kicker: "04",
+    icon: "brackets",
+    accent: "amber",
+    piece: "♟",
+    pieceName: "Pawn",
     items: [
       "Rust",
       "C++",
@@ -120,6 +144,10 @@ export const skills: readonly SkillGroup[] = [
   {
     group: "Security Tooling & Monitoring",
     kicker: "05",
+    icon: "radar",
+    accent: "signal",
+    piece: "♜",
+    pieceName: "Rook",
     items: [
       "Custom Rust and C++ utilities",
       "Real time traffic analysis",
@@ -131,6 +159,10 @@ export const skills: readonly SkillGroup[] = [
   {
     group: "Defensive Security & Data Protection",
     kicker: "06",
+    icon: "shield",
+    accent: "jade",
+    piece: "♚",
+    pieceName: "King",
     items: [
       "Access controls",
       "Encryption",
@@ -144,6 +176,10 @@ export const skills: readonly SkillGroup[] = [
   {
     group: "Infrastructure & Networking",
     kicker: "07",
+    icon: "nodes",
+    accent: "azure",
+    piece: "♜",
+    pieceName: "Rook",
     items: [
       "Firewalls, routers, switches",
       "Access points and Wi-Fi management",
@@ -156,6 +192,10 @@ export const skills: readonly SkillGroup[] = [
   {
     group: "Frameworks & Databases",
     kicker: "08",
+    icon: "database",
+    accent: "plasma",
+    piece: "♟",
+    pieceName: "Pawn",
     items: [
       "Axum",
       "Node.js",
@@ -171,6 +211,10 @@ export const skills: readonly SkillGroup[] = [
   {
     group: "Practices",
     kicker: "09",
+    icon: "branch",
+    accent: "bronze",
+    piece: "♟",
+    pieceName: "Pawn",
     items: [
       "Git",
       "Jenkins",

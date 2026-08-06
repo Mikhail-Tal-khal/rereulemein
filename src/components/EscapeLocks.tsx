@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import { escapeRooms } from "@/data/profile";
+import { accents, type AccentKey } from "@/lib/accents";
+
+const LOCK_HUES: readonly AccentKey[] = ["amber", "azure", "plasma"];
 
 export default function EscapeLocks() {
   const [opened, setOpened] = useState<number[]>([]);
@@ -21,6 +24,7 @@ export default function EscapeLocks() {
         {escapeRooms.map((item, index) => {
           const open = opened.includes(index);
           const panelId = `lock-panel-${index}`;
+          const tone = accents[LOCK_HUES[index % LOCK_HUES.length]];
 
           return (
             <button
@@ -29,20 +33,24 @@ export default function EscapeLocks() {
               onClick={() => toggle(index)}
               aria-expanded={open}
               aria-controls={panelId}
-              className={`h-full cursor-pointer rounded-sm border p-6 text-left transition-colors duration-300 ${
+              className={`h-full cursor-pointer rounded-sm border p-6 text-left transition-all duration-300 ${
                 open
-                  ? "border-signal/40 bg-signal/[0.05]"
+                  ? `${tone.border} ${tone.bg} -translate-y-0.5`
                   : "border-line/80 bg-surface/50 hover:border-bone/30"
               }`}
             >
               <div className="flex items-center justify-between gap-3">
-                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
+                <span
+                  className={`font-mono text-[10px] uppercase tracking-[0.2em] ${
+                    open ? tone.text : "text-muted"
+                  }`}
+                >
                   {item.lock}
                 </span>
                 <span
                   aria-hidden="true"
                   className={`text-sm transition-colors ${
-                    open ? "text-signal" : "text-muted/70"
+                    open ? tone.text : "text-muted/70"
                   }`}
                 >
                   {open ? "◇" : "◈"}
@@ -79,7 +87,7 @@ export default function EscapeLocks() {
       <p
         aria-live="polite"
         className={`mt-5 font-mono text-[11px] uppercase tracking-[0.2em] transition-opacity duration-500 ${
-          allOpen ? "text-signal opacity-100" : "text-muted/40 opacity-70"
+          allOpen ? "text-jade opacity-100" : "text-muted/40 opacity-70"
         }`}
       >
         {allOpen
