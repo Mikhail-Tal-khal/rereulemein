@@ -67,18 +67,19 @@ export default function FutureOfMedicinePost() {
 
         <div className="prose-content mt-12 space-y-6 text-[17px] leading-[1.8] text-bone/90">
           <p>
-            &ldquo;Malware that cures cancer&rdquo; makes a good headline,
-            but it isn&rsquo;t a real research programme — nobody is
-            treating patients with computer viruses. What&rsquo;s actually
-            happening in labs is close enough to explain why the idea has
-            teeth: researchers are engineering biological and computational
-            tools that act with the same logic malware has — a payload,
-            a delivery mechanism, a target it seeks out and disables — just
-            built from viral genomes, nanoparticles, and edited DNA instead
-            of code. Below is where that real work actually stands, on
-            three fronts, as of 2026: editing genes directly, delivering
-            treatment payloads with precision, and using quantum computing
-            to design the molecules in the first place.
+            &ldquo;Malware that cures cancer&rdquo; makes a catchy headline,
+            but it isn&rsquo;t an actual research programme, nobody is
+            treating patients with computer viruses. What is happening in
+            labs is close enough to that idea to explain why it sounds
+            plausible in the first place. Researchers really are building
+            biological and computational tools that work on the same logic
+            malware does: a payload, a way to deliver it, a target it hunts
+            down and disables. The difference is what they&rsquo;re built
+            from, viral genomes, nanoparticles, edited DNA, instead of code.
+            Here&rsquo;s where that work actually stands right now, across
+            three fronts: editing genes directly, delivering treatment
+            payloads with precision, and using quantum computing to design
+            the molecules in the first place.
           </p>
 
           <dl className="mt-10 grid grid-cols-1 gap-px overflow-hidden rounded-sm border border-line/80 bg-line/60 sm:grid-cols-3">
@@ -91,114 +92,121 @@ export default function FutureOfMedicinePost() {
             1. Editing the DNA directly: CRISPR-Cas9
           </h2>
           <p>
-            CRISPR-Cas9 lets researchers cut DNA at a specific, chosen
-            sequence and either disable a gene or splice in a correction.
-            Two CRISPR therapies are FDA-approved today: Casgevy, approved
-            December 2023 for sickle cell disease and beta-thalassemia, and
-            EDIT-101, for the inherited blindness Leber congenital amaurosis
-            type 10. Both work by editing a patient&rsquo;s own cells outside
-            or inside the body to fix a single, well-understood genetic
-            fault — not by rewriting the genome wholesale.
+            CRISPR-Cas9 lets researchers cut DNA at a chosen sequence and
+            either knock out a gene or splice in a fix. Two CRISPR therapies
+            have FDA approval right now: Casgevy, approved in December 2023
+            for sickle cell disease and beta-thalassemia, and EDIT-101, for
+            the inherited blindness Leber congenital amaurosis type 10. Both
+            work by editing a patient&rsquo;s own cells, either outside the
+            body or inside it, to correct one specific, well-understood
+            genetic fault. Neither one is rewriting the genome wholesale.
           </p>
           <p>
-            Cancer is harder, because most cancers aren&rsquo;t one clean
-            mutation. The current CRISPR angle on cancer is mostly about
-            improving cell therapies rather than editing tumors directly:
-            Caribou Biosciences&rsquo; CB-010 uses CRISPR to edit
-            donor immune cells into better cancer hunters, and it entered
-            Phase 2 trials for B-cell non-Hodgkin lymphoma in 2025. No CRISPR
-            cancer therapy has FDA approval yet.
+            Cancer is a tougher problem, since most cancers aren&rsquo;t
+            caused by one clean mutation you can just cut out. Right now the
+            CRISPR work on cancer is mostly about improving cell therapies
+            rather than editing tumors directly. Caribou Biosciences&rsquo;
+            CB-010, for example, uses CRISPR to edit donor immune cells so
+            they hunt cancer better, and it moved into Phase 2 trials for
+            B-cell non-Hodgkin lymphoma in 2025. There&rsquo;s no
+            FDA-approved CRISPR cancer therapy yet.
           </p>
           <p>
-            HIV is the honest cautionary tale. Excision BioTherapeutics ran
-            a Phase 1/2 trial of EBT-101, a CRISPR treatment delivered by a
-            viral vector that cuts HIV&rsquo;s DNA out of infected cells
-            directly. It proved safe in patients — but it did not stop the
-            virus from rebounding once treatment stopped. That result is
-            exactly why doctors don&rsquo;t call this a cure yet: gene
-            editing can find and cut viral DNA, but clearing every last
-            hidden copy from the body is still unsolved.
+            HIV is probably the most honest example of where things stand.
+            Excision BioTherapeutics ran a Phase 1/2 trial of EBT-101, a
+            CRISPR treatment delivered through a viral vector that cuts
+            HIV&rsquo;s DNA straight out of infected cells. It turned out to
+            be safe in patients, but it didn&rsquo;t stop the virus from
+            coming back once treatment ended. That&rsquo;s why nobody&rsquo;s
+            calling this a cure. Gene editing can find and cut viral DNA
+            just fine, clearing out every last hidden copy in the body is
+            the part that&rsquo;s still unsolved.
           </p>
 
           <h2 className="pt-4 text-2xl font-medium tracking-tight text-bone">
             2. Payloads that hunt the disease: engineered viruses and nanoparticles
           </h2>
           <p>
-            This is the closest real analogue to the &ldquo;malware&rdquo;
-            idea, and it&rsquo;s been in clinics for over a decade.
-            Oncolytic virotherapy takes a virus, strips its ability to harm
-            healthy tissue, and lets it selectively infect and burst cancer
-            cells — releasing tumor antigens that then train the immune
-            system to hunt down what&rsquo;s left. T-VEC, a modified herpes
-            simplex virus, has been FDA-approved for melanoma since 2015.
+            This is probably the closest real match to the malware idea, and
+            it&rsquo;s actually been in clinics for over a decade. Oncolytic
+            virotherapy takes a virus, strips out its ability to harm
+            healthy tissue, and lets it infect and burst cancer cells
+            specifically. That releases tumor antigens, which then train the
+            immune system to go after whatever&rsquo;s left. T-VEC, a
+            modified herpes simplex virus, has had FDA approval for melanoma
+            since 2015.
           </p>
           <p>
-            For brain tumors specifically, several engineered viruses are in
-            trials against glioblastoma: PVS-RIPO, an attenuated poliovirus,
-            has FDA Fast Track status; G47Δ, an engineered herpes virus, is
-            already approved in Japan for recurrent glioblastoma; DNX-2401,
-            an engineered adenovirus, has shown early promise. None of these
-            are routine treatment yet — glioblastoma remains one of the
-            hardest cancers to treat — but the mechanism (an engineered
-            biological payload that finds and disables malignant cells) is
-            real, approved-in-principle science.
+            For brain tumors specifically, a handful of engineered viruses
+            are in trials against glioblastoma. PVS-RIPO, an attenuated
+            poliovirus, has FDA Fast Track status. G47Δ, an engineered
+            herpes virus, is already approved in Japan for recurrent
+            glioblastoma. DNX-2401, an engineered adenovirus, has shown some
+            early promise too. None of this is routine treatment yet,
+            glioblastoma is still one of the hardest cancers there is, but
+            the basic mechanism, an engineered biological payload that finds
+            and disables malignant cells, is real and already working in at
+            least one country.
           </p>
           <p>
-            Nanomedicine does the same job with non-living carriers instead
-            of viruses: liposomes, polymeric nanoparticles, and dendrimers
-            engineered to accumulate in tumors — either passively, because
-            tumor blood vessels are leakier than healthy ones, or actively,
-            via surface molecules that bind to receptors cancer cells
-            overexpress. The payoff is the same logic malware has: get the
-            payload to the target and nowhere else, so the drug dose that
-            reaches healthy tissue — and the side effects that come with
-            it — drops.
+            Nanomedicine does a similar job but without a living virus
+            involved. Liposomes, polymeric nanoparticles, and dendrimers get
+            engineered to build up in tumors, either passively, because
+            tumor blood vessels tend to be leakier than healthy ones, or
+            actively, using surface molecules that latch onto receptors
+            cancer cells overproduce. The payoff is the same idea behind
+            malware: get the payload to the target and nowhere else. Less of
+            the drug ends up in healthy tissue, so the side effects drop
+            too.
           </p>
 
           <h2 className="pt-4 text-2xl font-medium tracking-tight text-bone">
             3. Quantum-assisted drug discovery
           </h2>
           <p>
-            This is where &ldquo;quantum dynamics&rdquo; and mathematics
-            genuinely enter the picture — not as a way to run malware
-            through DNA, but as a way to simulate molecules well enough to
-            design better drugs and better gene-editing guides before they
-            ever reach a lab bench. The problem quantum computing is aimed
-            at is real: the space of drug-like molecules is estimated at
-            around 10⁶⁰, and the quantum-mechanical interactions that decide
-            whether a molecule will bind its target are too complex for
-            classical computers to simulate exactly at any useful scale.
+            This is actually where quantum computing and math genuinely
+            enter the picture, just not as a way to run malware through
+            DNA. It&rsquo;s more about simulating molecules accurately
+            enough to design better drugs, and better gene-editing guides,
+            before anything reaches a lab bench. The problem quantum
+            computing is aimed at here is a real one. The space of
+            drug-like molecules is estimated at somewhere around 10⁶⁰, and
+            the quantum-mechanical interactions that determine whether a
+            molecule actually binds its target are too complicated for
+            classical computers to simulate exactly at any scale
+            that&rsquo;s useful.
           </p>
           <p>
-            In 2026, hybrid quantum-classical methods from the international
-            Quantum for Bio challenge simulated protein complexes of over
-            12,000 atoms — the largest biologically meaningful molecular
-            simulations run this way so far. Companies including IBM,
-            D-Wave, QuEra, and Qubit Pharmaceuticals are running active
-            pharma partnerships on molecular simulation and lead
-            optimization. It is still an experimental, research-stage tool
-            sitting alongside — not replacing — classical computation and
-            AI in drug discovery, not a deployed part of any approved
-            treatment yet.
+            This year, hybrid quantum-classical methods from the
+            international Quantum for Bio challenge managed to simulate
+            protein complexes with over 12,000 atoms, the largest
+            biologically meaningful simulations run this way so far.
+            Companies like IBM, D-Wave, QuEra, and Qubit Pharmaceuticals all
+            have active pharma partnerships going on molecular simulation
+            and lead optimization. It&rsquo;s still experimental,
+            research-stage work sitting alongside classical computation and
+            AI in drug discovery rather than replacing it, and it isn&rsquo;t
+            part of any approved treatment yet.
           </p>
 
           <h2 className="pt-4 text-2xl font-medium tracking-tight text-bone">
             Where that actually leaves things
           </h2>
           <p>
-            Put together honestly: gene editing can already fix single-gene
-            diseases and is being tested, with mixed results, against
-            cancer and HIV. Engineered viruses and nanoparticles that hunt
-            and disable diseased cells are real and, in a few cases,
-            already approved. Quantum computing is starting to make the
-            hardest part of drug design — actually simulating the
-            chemistry — tractable. None of it is malware, none of it is a
-            single unified cure for cancer, HIV, and brain tumors at once,
-            and none of it skips the years of trial data that separate
-            &ldquo;works in principle&rdquo; from &ldquo;approved
-            treatment.&rdquo; That slower, harder version is also the more
-            interesting one — it&rsquo;s the one that&rsquo;s actually
-            happening.
+            So here&rsquo;s where things honestly stand. Gene editing can
+            already fix single-gene diseases, and it&rsquo;s being tested
+            against cancer and HIV with mixed results so far. Engineered
+            viruses and nanoparticles that hunt down and disable diseased
+            cells are real, and a few are already approved for use. Quantum
+            computing is starting to make the hardest part of drug design,
+            actually simulating the chemistry, something researchers can
+            work with. None of it is malware. There&rsquo;s no single
+            unified cure for cancer, HIV, and brain tumors sitting behind
+            any of this, and none of it skips the years of trial data
+            separating &ldquo;works in principle&rdquo; from &ldquo;approved
+            treatment.&rdquo; It&rsquo;s a slower story than the headline
+            version, but it&rsquo;s also a more interesting one, mostly
+            because it&rsquo;s the one that&rsquo;s actually happening.
           </p>
         </div>
 

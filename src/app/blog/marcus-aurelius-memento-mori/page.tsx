@@ -89,35 +89,38 @@ export default function MarcusAureliusPost() {
 
         <div className="prose-content mt-12 space-y-6 text-[17px] leading-[1.8] text-bone/90">
           <p>
-            Marcus Aurelius ruled Rome from 161 to 180 AD, most of it spent on
-            campaign along the Danube frontier rather than in the city. He
-            didn&rsquo;t write his philosophy for an audience. The book we
-            call <em className="font-serif italic">Meditations</em> is a
-            private notebook — the Greek title is closer to{" "}
-            <em className="font-serif italic">Ta eis heauton</em>,
-            &ldquo;to himself.&rdquo; He was reminding himself how to think,
-            in his own hand, between one campaign and the next. It was never
-            edited for publication, and that is exactly why it still reads
-            as useful advice instead of a finished philosophical system.
+            Marcus Aurelius ruled Rome from 161 to 180 AD, and he spent most
+            of that time on campaign along the Danube rather than in the
+            city. He wasn&rsquo;t writing for readers. What we now call{" "}
+            <em className="font-serif italic">Meditations</em> started out
+            as a private notebook, the actual Greek title translates closer
+            to <em className="font-serif italic">Ta eis heauton</em>,
+            &ldquo;to himself.&rdquo; He was working through his own
+            thinking, in his own hand, in the gaps between one campaign and
+            the next. Nobody edited it, nobody prepared it for publication,
+            and that&rsquo;s probably why it still holds up as practical
+            advice instead of some polished philosophical treatise.
           </p>
 
           <p>
-            One habit shows up again and again in those notes:{" "}
-            <strong className="font-medium text-bone">memento mori</strong>
-            {" "}— remember you will die. Modern readers sometimes hear that
-            as morbid, or as a stylised skull on a desk. For Marcus it was
-            neither. It was a filter. If you genuinely hold in mind that your
-            time is finite and the exact amount is unknown, most of what
-            competes for your attention on a given day loses its claim on
-            you. What&rsquo;s left is what actually matters.
+            One idea keeps coming back throughout the notebook:{" "}
+            <strong className="font-medium text-bone">memento mori</strong>,
+            remember you will die. People today tend to hear that as
+            something dark, maybe picture a skull sitting on a desk
+            somewhere. That&rsquo;s not really what Marcus meant by it. For
+            him it worked more like a filter. If you actually keep in mind
+            that your time is limited, and you don&rsquo;t know how much of
+            it is left, a lot of what&rsquo;s competing for your attention
+            on any given day just stops mattering. What&rsquo;s left over is
+            usually what was worth your time in the first place.
           </p>
 
           <h2 className="pt-4 text-2xl font-medium tracking-tight text-bone">
             The line itself
           </h2>
           <p>
-            The clearest statement of it is in Book 2, written while he was
-            stationed with the army:
+            The clearest version of this shows up in Book 2, written while
+            he was out with the army:
           </p>
 
           <Pull
@@ -126,15 +129,16 @@ export default function MarcusAureliusPost() {
           />
 
           <p>
-            Read carelessly, that sounds like an excuse to disengage —
-            nothing matters, so do whatever. Marcus means the opposite. If
-            you could leave at any moment, then whatever you&rsquo;re doing
-            right now is the only thing you will have actually done with
-            this portion of your life. That raises the standard for the
-            present moment; it doesn&rsquo;t lower it.
+            Read quickly, that can sound like an excuse to check out,
+            nothing matters, so do whatever you want. That&rsquo;s not
+            really what he&rsquo;s getting at. If anything it&rsquo;s the
+            opposite: if you could leave at any moment, then whatever
+            you&rsquo;re doing right now is genuinely the only thing
+            you&rsquo;ll have done with this stretch of your life. That sets
+            a higher bar for the present moment, not a lower one.
           </p>
 
-          <p>He returns to the same idea from a different angle a few pages later:</p>
+          <p>A few pages later he comes back to it from another angle:</p>
 
           <Pull
             text="Not to live as if you had endless years ahead of you. Death overshadows you. While you're alive and able — be good."
@@ -142,8 +146,8 @@ export default function MarcusAureliusPost() {
           />
 
           <p>
-            And again, arguing against the idea that a longer life would
-            somehow be a different kind of possession than the one you
+            And then again, pushing back on the idea that living longer
+            would somehow give you a different kind of life than the one you
             already have:
           </p>
 
@@ -156,42 +160,45 @@ export default function MarcusAureliusPost() {
             Why this isn&rsquo;t nihilism
           </h2>
           <p>
-            Stoicism has a companion idea that keeps memento mori from
-            collapsing into fatalism: the dichotomy of control. Marcus draws
-            a hard line between what is up to you — your judgments,
-            intentions, and effort — and what isn&rsquo;t: other people,
-            outcomes, how long you get. He doesn&rsquo;t ask you to stop
-            caring about outcomes. He asks you to stop spending your finite
-            attention on the part of the outcome you never controlled in the
-            first place, so that more of it goes toward the part you do
-            control: how you show up right now.
+            There&rsquo;s another Stoic idea that keeps memento mori from
+            turning into fatalism, and that&rsquo;s the dichotomy of
+            control. Marcus is pretty strict about drawing a line between
+            what&rsquo;s actually up to you (your judgment, your intentions,
+            the effort you put in) and what isn&rsquo;t (other people,
+            outcomes, how long you get to live). He&rsquo;s not telling you
+            to stop caring how things turn out. He&rsquo;s telling you to
+            stop pouring your limited attention into the part of the outcome
+            you never had a say in, so more of it can go toward the part you
+            do control, which is just how you show up right now.
           </p>
           <p>
-            That is the practical link between the two ideas. Mortality sets
-            the deadline. The dichotomy of control tells you where to spend
-            the time you have before it.
+            That&rsquo;s really where the two ideas connect. Mortality is
+            the deadline. The dichotomy of control is just about where you
+            spend the time before it arrives.
           </p>
 
           <h2 className="pt-4 text-2xl font-medium tracking-tight text-bone">
             What it looks like in practice
           </h2>
           <p>
-            You don&rsquo;t need a battlefield to apply it. It shows up as a
-            question worth asking before you spend an evening on something:
-            if this were one of the last ones, would I still spend it this
-            way? Most of the time the honest answer reshuffles the priority
-            list without requiring any grand gesture — it just means the
-            phone goes down, the difficult conversation happens instead of
-            getting deferred again, and the work that actually matters gets
-            the good hours instead of the leftover ones.
+            You don&rsquo;t need to be commanding an army to use this. It
+            comes down to a fairly simple question before you spend an
+            evening on something: if this were one of my last ones, would I
+            still spend it this way? Usually the honest answer doesn&rsquo;t
+            call for some dramatic life change, it just quietly reorders
+            your priorities. The phone goes down. The conversation
+            you&rsquo;ve been putting off actually happens. The work that
+            matters gets your good hours instead of whatever&rsquo;s left
+            over at the end of the day.
           </p>
           <p>
-            Marcus wasn&rsquo;t writing self-help. He was an emperor talking
-            himself through plague, war, and a son who would go on to
-            misrule the empire he left him, and none of that shows up as
-            despair in the text. It shows up as attention. That&rsquo;s the
-            whole practice: hold the deadline in view, and let it decide
-            what gets your attention today.
+            Marcus wasn&rsquo;t trying to write a self-help book. He was an
+            emperor working through plague, ongoing war, and a son who
+            would eventually run the empire he left him into the ground, and
+            none of that comes across as despair in the notebook. It comes
+            across as attention. That&rsquo;s really the whole practice,
+            keep the deadline in view and let it decide what&rsquo;s worth
+            your attention today.
           </p>
         </div>
 

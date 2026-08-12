@@ -29,9 +29,9 @@ export default function BlogIndexPage() {
           Blog
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted">
-          Two threads I keep pulling on outside of security work: Stoic
-          philosophy, and how far the real, published research on
-          next-generation medicine has actually gotten.
+          Two things I keep coming back to outside of security work: Stoic
+          philosophy, and how far the actual published research on
+          next-generation medicine has gotten.
         </p>
 
         <div className="mt-16 grid gap-px overflow-hidden rounded-sm border border-line/80 bg-line/60 lg:grid-cols-2">
