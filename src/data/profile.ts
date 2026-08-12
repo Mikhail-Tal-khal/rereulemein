@@ -10,7 +10,7 @@ import type { AccentKey } from "@/lib/accents";
  */
 
 export const profile = {
-  name: "Solomon Rereu Lemein",
+  name: "S.LEMEIN",
   role: "Cybersecurity Engineer",
   focus: ["OSINT", "Red Team", "Fraud Analysis"],
   location: "Mombasa, Kenya",
