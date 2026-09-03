@@ -1,4 +1,4 @@
-# Portfolio — Solomon Rereu Lemein
+# Portfolio — sato akira
 
 Personal portfolio site. Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS v4.
 
